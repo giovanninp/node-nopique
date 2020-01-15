@@ -1,6 +1,7 @@
 # node-nopique
+NoSQL version
 
 # Steps : 
-1 - $ yarn add
-2 - setup your mongo db at src/utils/server.js
-3 - run $ yarn dev
+- $ yarn add
+- setup your mongo db at src/utils/server.js
+- run $ yarn dev
