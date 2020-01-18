@@ -10,6 +10,7 @@ const AthleteSchema = new mongoose.Schema({
         month:Number,
         year:Number
     },
+    coach_id:String,
     training: Boolean,
     looking_for_a_coach: Boolean,
     avatar_url: String,

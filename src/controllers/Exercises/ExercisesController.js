@@ -1,5 +1,5 @@
-const Exercise = require('../models/Exercise');
-const thereIsAtDB = require('../utils/thereIsAtDB');
+const Exercise = require('../../models/Exercise');
+const thereIsAtDB = require('../../utils/thereIsAtDB');
 
 module.exports = {
     async index (req, resp) {
@@ -32,6 +32,9 @@ module.exports = {
         else {
             return resp.json({message:'Already exists'});
         }
-
+    },
+    async update (req, resp) {
+        const exercise = await Exercise.findByIdAndUpdate(req.query.id,req.query);
+        return resp.json(exercise);
     }
 }
