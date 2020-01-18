@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const server = mongoose.connect('mongodb+srv://giovanninp:roberta123@cluster0-epldx.mongodb.net/nopique-app',{
+const server = mongoose.connect('mongodb+srv://nopique:school@cluster0-epldx.mongodb.net/nopique-app',{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });

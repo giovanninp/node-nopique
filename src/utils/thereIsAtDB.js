@@ -2,7 +2,7 @@ const Athlete = require('../models/Athlete');
 const Coach = require('../models/Coach');
 const Exercise = require('../models/Exercise');
 
-const tables = () => {
+const tables = {
     Athlete,
     Coach,
     Exercise

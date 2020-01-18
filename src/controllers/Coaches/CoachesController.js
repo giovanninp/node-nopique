@@ -1,6 +1,7 @@
-const Coach = require('../models/Coach');
-const locationPoint = require('../utils/locationPoint');
-const textToArray = require('../utils/textToArray');
+const Coach = require('../../models/Coach');
+const locationPoint = require('../../utils/locationPoint');
+const textToArray = require('../../utils/textToArray');
+const thereIsAtDB = require('../../utils/thereIsAtDB');
 
 module.exports = {
     async index (req,resp) {
