@@ -1,12 +1,22 @@
 const mongoose = require('mongoose');
 
-const Train = new mongoose.Schema({
-    title: String,
-    coach_id: String,
-    athlete_id: String,
-    interpolation_time: String,
-    notes: String,
-    sets_ids:[String]
+const TrainSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  type: String,
+  athletes_ids: [String],
+  coaches_ids: {
+    type: [String],
+    required: true
+  },
+  trains_sets_ids: [String],
+  obs: String,
+  v: [String],
+  interpolation_time: Number,
+  counter: Number,
+  img_url: String
 });
 
-module.exports = mongoose.model("Train",Train);
+module.exports = mongoose.model("Train", TrainSchema);

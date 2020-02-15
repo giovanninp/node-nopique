@@ -1,12 +1,15 @@
 const mongoose = require('mongoose');
 
-const TrainSet = new mongoose.Schema({
-    title: String,
-    reps: String,
-    rest_time: Number,
-    intensity: Number,
-    obs: String,
-    exercises_ids:[String]
+const TrainSetSchema = new mongoose.Schema({
+  train_id: {
+    type: String,
+    required: true
+  },
+  exercises_ids: [String],
+  rest_time: Number,
+  reps: String,
+  done: Boolean,
+  cadency: [Number]
 });
 
-module.exports = mongoose.model("TrainSet",TrainSet);
+module.exports = mongoose.model("TrainSet", TrainSetSchema);

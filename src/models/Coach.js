@@ -1,25 +1,19 @@
 const mongoose = require('mongoose');
-const PointSchema = require('./utils/PointSchema');
 
 const CoachSchema = new mongoose.Schema({
-    name: String,
-    nickname:String,
-    phone_number:String,
-    birthdate:{
-        day:Number,
-        month:Number,
-        year:Number
-    },
-    reg_num:String,
-    avatar_url: String,
-    bio: String,
-    specs: [String],
-    athletes_ids :[String],
-    trains_ids: [String],
-    location: {
-        type: PointSchema,
-        index: '2dsphere'
-    }
-});
+  user_id: {
+    type: String,
+    required: true
+  },
+  reg_num: String,
+  valid: Boolean,
+  looking_for_a_athlete: Boolean,
+  looking_for_a_gym: Boolean,
+  available: Boolean,
+  specs: [String],
+  athletes_ids: [String],
+  trains_ids: [String],
+  communities_ids: [String]
+})
 
-module.exports = mongoose.model("Coach",CoachSchema)
+module.exports = mongoose.model("Coach", CoachSchema);

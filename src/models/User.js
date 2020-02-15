@@ -1,20 +1,24 @@
 const mongoose = require('mongoose');
 
-const AthleteSchema = new mongoose.Schema({
-    name: String,
-    nickname:String,
-    phone_number:String,
-    birthdate:{
-        day:Number,
-        month:Number,
-        year:Number
-    },
-    training: Boolean,
-    looking_for_a_coach: Boolean,
-    avatar_url: String,
-    bio: String,
-    exams_ids: [String],
-    trains_ids: [String]
+const UserSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  nickname: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  role: String,
+  contact_id: String,
+  position_id: String,
+  role_id: String,
+  device_id: String,
+  avatar_url: String
 });
 
-module.exports = mongoose.model("Athlete",AthleteSchema);
+module.exports = mongoose.model("User", UserSchema);

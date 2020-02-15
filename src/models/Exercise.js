@@ -1,11 +1,19 @@
 const mongoose = require('mongoose');
 
 const ExerciseSchema = new mongoose.Schema({
-    name: String,
-    muscular_group: String,
-    img_url: String,
-    gif_url: String,
-    video_url: String
+  title: {
+    type: String,
+    required: true
+  },
+  author_id: String,
+  muscular_groups: {
+    type: [String],
+    required: true
+  },
+  description: String,
+  imgs_urls: [String],
+  gifs_urls: [String],
+  video_url: String
 });
 
-module.exports = mongoose.model("Exercise",ExerciseSchema);
+module.exports = mongoose.model("Exercise", ExerciseSchema);
