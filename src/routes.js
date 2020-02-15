@@ -9,6 +9,7 @@ const TrainSetsController = require('./controllers/TrainSetsController');
 const SearcExerciseController = require('./controllers/SearchExerciseController');
 const AddExerciseToSet = require('./controllers/AddExerciseToSet');
 const AddSetToTrain = require('./controllers/AddSetToTrain');
+const AddTrainToAthlete = require('./controllers/AddTrainToAthlete');
 
 
 const routes = Router();
@@ -43,5 +44,8 @@ routes.get('/exercises/search', SearcExerciseController.index);
 routes.get('/sets/exercises/update', AddExerciseToSet.update);
 //Coaches specs
 routes.get("/coaches/specs/update", AddSpecCoachController.update); //not working
+
+//AddTrainToAthlete
+routes.get("/trains/train-athlete", AddTrainToAthlete.update);
 
 module.exports = routes;
